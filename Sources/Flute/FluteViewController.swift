@@ -12,7 +12,7 @@ public class FluteViewController: UIViewController {
 
   lazy var titleLabel: UILabel = {
     let label = UILabel()
-    label.text = "Piano"
+    label.text = "Flute"
     label.font = UIFont.systemFont(ofSize: 20)
     label.textColor = .green
     
