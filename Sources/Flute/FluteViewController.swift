@@ -9,14 +9,17 @@ import UIKit
 import SnapKit
 
 public class FluteViewController: UIViewController {
-  lazy titleLabel: UILabel = {
+
+  lazy var titleLabel: UILabel = {
     let label = UILabel()
-    label.text = "Flute"
-    label.fontSize = 20
-    label.color = .green
+    label.text = "Piano"
+    label.font = UIFont.systemFont(ofSize: 20)
+    label.textColor = .green
+    
+    return label
   }()
 
-  override func viewDidLoad() {
+  public override func viewDidLoad() {
     super.viewDidLoad()
 
     // Do any additional setup after loading the view.
