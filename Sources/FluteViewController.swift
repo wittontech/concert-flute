@@ -8,11 +8,12 @@
 import UIKit
 import SnapKit
 
-class FluteViewController: UIViewController {
+public class FluteViewController: UIViewController {
   lazy titleLabel: UILabel = {
     let label = UILabel()
     label.text = "Flute"
     label.fontSize = 20
+    label.color = .green
   }()
 
   override func viewDidLoad() {
