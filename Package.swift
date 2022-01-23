@@ -16,15 +16,15 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-      .package(url: "https://github.com/SnapKit/SnapKit.git", .upToNextMajor(from: "5.0.1"))
-        // .package(url: /* package url */, from: "1.0.0"),
+      .package(url: "https://github.com/SnapKit/SnapKit.git", .upToNextMajor(from: "5.0.1")),
+      .package(url: "https://github.com/wittontech/concert-melody", .branch("master"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "Flute",
-            dependencies: ["SnapKit"]),
+            dependencies: ["SnapKit", .product(name: "Melody", package:"concert-melody")]),
         .testTarget(
             name: "FluteTests",
             dependencies: ["Flute"]),

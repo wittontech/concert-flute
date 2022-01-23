@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Melody
 
 public class FluteViewController: UIViewController {
   
@@ -30,6 +31,12 @@ public class FluteViewController: UIViewController {
 
     // Do any additional setup after loading the view.
     layout()
+  }
+  
+  public override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    Melody().perform()
   }
 
   func layout() {
