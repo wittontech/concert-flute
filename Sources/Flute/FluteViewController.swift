@@ -9,6 +9,12 @@ import UIKit
 import SnapKit
 
 public class FluteViewController: UIViewController {
+  
+  lazy var coverImage: UIImageView = {
+    let image = UIImageView(image: UIImage(named: "cover-flute"))
+    image.contentMode = .scaleAspectFill
+    return image
+  }()
 
   lazy var titleLabel: UILabel = {
     let label = UILabel()
@@ -23,14 +29,21 @@ public class FluteViewController: UIViewController {
     super.viewDidLoad()
 
     // Do any additional setup after loading the view.
-    self.view.addSubview(titleLabel)
-
     layout()
   }
 
   func layout() {
+    self.view.addSubview(coverImage)
+    self.view.addSubview(titleLabel)
+
+    coverImage.snp.makeConstraints { make in
+      make.width.equalTo(300)
+      make.height.equalTo(225)
+      make.center.equalToSuperview()
+    }
     titleLabel.snp.makeConstraints { make in
-      make.center.equalTo(view.center)
+      make.top.equalTo(coverImage).offset(30)
+      make.centerX.equalToSuperview()
     }
   }
 
