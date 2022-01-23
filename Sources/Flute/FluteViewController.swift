@@ -11,7 +11,7 @@ import SnapKit
 public class FluteViewController: UIViewController {
   
   lazy var coverImage: UIImageView = {
-    let image = UIImageView(image: UIImage(named: "cover-flute"))
+    let image = UIImageView(image: UIImage(named: "cover-flute", in: Bundle.module, compatibleWith: nil))
     image.contentMode = .scaleAspectFill
     return image
   }()
@@ -42,7 +42,7 @@ public class FluteViewController: UIViewController {
       make.center.equalToSuperview()
     }
     titleLabel.snp.makeConstraints { make in
-      make.top.equalTo(coverImage).offset(30)
+      make.top.equalTo(coverImage.snp.bottom).offset(30)
       make.centerX.equalToSuperview()
     }
   }
